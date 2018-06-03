@@ -322,7 +322,7 @@
                                 (CGRectGetHeight(fromViewController.view.bounds) * percentComplete),
                                 CGRectGetWidth(fromViewController.view.frame),
                                 CGRectGetHeight(fromViewController.view.frame));
-        [self.delegate didSwipeDown:0 percentage:percentComplete];
+        [self.delegate didSwipeDown:percentComplete];
     } else if (self.direction == ZFModalTransitonDirectionLeft) {
         updateRect = CGRectMake(-(CGRectGetWidth(fromViewController.view.bounds) * percentComplete),
                                 0,
@@ -363,6 +363,7 @@
                              CGRectGetHeight(fromViewController.view.bounds),
                              CGRectGetWidth(fromViewController.view.frame),
                              CGRectGetHeight(fromViewController.view.frame));
+        [self.delegate didSwipeDown:1.0f];
     } else if (self.direction == ZFModalTransitonDirectionLeft) {
         endRect = CGRectMake(-CGRectGetWidth(fromViewController.view.bounds),
                              0,
@@ -404,7 +405,7 @@
 {
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
     [transitionContext cancelInteractiveTransition];
-    
+    [self.delegate didSwipeDown:0.0f];
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
 
