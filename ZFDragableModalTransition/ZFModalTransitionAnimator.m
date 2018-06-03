@@ -322,6 +322,7 @@
                                 (CGRectGetHeight(fromViewController.view.bounds) * percentComplete),
                                 CGRectGetWidth(fromViewController.view.frame),
                                 CGRectGetHeight(fromViewController.view.frame));
+        [self.delegate didSwipeDown:0 percentage:percentComplete];
     } else if (self.direction == ZFModalTransitonDirectionLeft) {
         updateRect = CGRectMake(-(CGRectGetWidth(fromViewController.view.bounds) * percentComplete),
                                 0,
