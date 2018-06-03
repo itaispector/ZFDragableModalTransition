@@ -363,7 +363,6 @@
                              CGRectGetHeight(fromViewController.view.bounds),
                              CGRectGetWidth(fromViewController.view.frame),
                              CGRectGetHeight(fromViewController.view.frame));
-        [self.delegate didSwipeDown:1.0f];
     } else if (self.direction == ZFModalTransitonDirectionLeft) {
         endRect = CGRectMake(-CGRectGetWidth(fromViewController.view.bounds),
                              0,
