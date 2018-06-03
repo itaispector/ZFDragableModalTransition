@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, ZFModalTransitonDirection) {
 
 @protocol ZFModalTransitionAnimatorDelegate
 
--(void)didSwipeDown:(CGFloat)swipeValue percentage:(CGFloat)percentage;
+-(void)didSwipeDown:(CGFloat)percentage;
     
 @end
 
